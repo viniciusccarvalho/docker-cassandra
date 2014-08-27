@@ -1,6 +1,7 @@
 FROM frodenas/java7
 MAINTAINER Vinicius Carvalho <viniciusccarvalho@gmail.com>
 
+
 RUN cd /tmp &&\
     wget http://apache.mirrors.pair.com/cassandra/2.0.10/apache-cassandra-2.0.10-bin.tar.gz && \
     tar -zxvf apache-cassandra-2.0.10-bin.tar.gz && \
@@ -8,11 +9,9 @@ RUN cd /tmp &&\
     sed -e 's_/var/lib_ /data_' -i /cassandra/conf/cassandra.yaml && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+    
 ADD scripts /scripts
-RUN chmod +x /scripts/*.sh
-
-
-
+RUN chmod +x /scripts/*.sh 
 
 ENTRYPOINT ["/scripts/cassandra.sh"]
 CMD [""]
