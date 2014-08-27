@@ -1,0 +1,8 @@
+[authentication]
+user = cassandra
+password = cassandra
+
+CREATE USER $USER_NAME$
+WITH PASSWORD '$PASSWORD$' NOSUPERUSER;
+
+CREATE KEYSPACE cf_keyspace;

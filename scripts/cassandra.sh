@@ -1,3 +1,6 @@
 #!/bin/bash
 
-/cassandra/bin/cassandra
+
+
+
+/cassandra/bin/cassandra -f
