@@ -1,0 +1,4 @@
+CREATE USER $USERNAME$ WITH PASSWORD '$PASSWORD$' NOSUPERUSER;
+
+CREATE KEYSPACE cf_keyspace
+WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
